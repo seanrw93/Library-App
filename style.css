@@ -1,0 +1,410 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    min-width: 430px;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    padding: 20px 60px;
+    background-color: #333;
+    color: #ccc;
+    box-shadow: 0px 5px 3px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.header > div > h1::before {
+    content: "\e599";
+    font-family: "Font Awesome 5 Free";
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-right: 10px;
+    color: #ccc
+}
+
+.header > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.header > div > h1 {
+    margin-bottom: 10px;
+}
+
+.header > div > a {
+    display: flex;
+    font-size: 0.9rem;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #ccc;
+    text-decoration: none;
+}
+
+.header > div > a::before {
+    content: "\f09b";
+    font-family: "Font Awesome 5 Brands";
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin-right: 5px;
+    color: #ccc
+}
+
+.header button {
+    font-size: 3rem;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background: none;
+    border: 2px solid #ccc;
+    color: #ccc;
+    transition: transform 1s ease;
+}
+
+.header button:hover {
+    transform: rotate(270deg);
+    transform-origin: center;
+    cursor: pointer;
+    background-color: #ccc;
+    color: #333
+}
+
+.container .empty-library {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+    animation: fadeIn 0.5s forwards;
+    z-index: 0;
+}
+
+.empty-library h1 {
+  font-size: 3rem;
+}
+
+.empty-library::after {
+    content: "\f518";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 4rem;
+}
+
+#formDiv {
+    animation: fadeIn 0.5s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-bottom: 20px;
+    padding: 20px 30px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 500px;
+    background: #333;
+    border: 1px solid #ccc;
+    color: #ccc;
+    border-radius: 5px;
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+
+#formDiv label {
+    font-size: 1.2rem;
+}
+
+label {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#exitWindow {
+    position: absolute;
+    top: -17px;
+    right: 0;
+    font-size: 2.5rem;
+    height: auto;
+}
+
+#exitWindow:hover {
+    cursor: pointer;
+}
+
+input[type="text"], input[type="number"], input[type="url"]  {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    line-height: 30px;
+    border-radius: 20px;
+    border: none;
+    background-color: #eee;
+    outline: none;
+    color: #333;
+    font-size: 1.2rem;
+    padding: 2px 8px;
+}
+
+input[type="checkbox"] {
+    width: 30px;
+}
+
+input[type="checkbox"]:hover {
+    cursor: pointer;
+}
+
+input[type="checkbox"]:focus {
+    accent-color: green;
+}
+
+
+#submitted-data {
+    position: absolute;
+    top: 150px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.data-grid {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 300px;
+    max-height: 300px;
+    background-color: #ccc;
+    margin: 0 auto;
+    color: #333;
+    border-radius: 5px;
+    box-shadow: 5px 3px 3px #444;
+}
+
+.data-grid:last-child {
+    margin-bottom: 20px;
+}
+
+.book-info {
+    position: relative;
+    height: 300px;
+}
+
+.book-info > div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+}
+
+
+.book-info img {
+    position: absolute;
+    height: 100%;
+    max-width: 50%;
+    width: auto;
+    object-fit: cover;
+    top: 0;
+    right: 0;
+}
+
+.book-info span {
+    font-weight: bold;
+}
+
+.title-author {
+    display: flex;
+    flex-direction: column;
+    color: #ccc;
+    border-bottom: 1px solid #ccc;
+    background-color: #333;
+    padding: 20px 10px;
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.title-author h2 {
+    font-size: 1.5em;;
+    font-weight: 700;
+}
+
+.submitted-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #ccc;
+    color: #ccc;
+    background-color: #333;
+    height: 30px;
+    width: 100%;
+    padding: 3px;
+    text-align: right;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+.submitted-date p {
+    font-size: 0.8rem;
+}
+
+#submit {
+    color: #ccc;
+    background: none;
+    outline: none;
+    border: 2px solid #ccc;
+    font-size: 1.2rem;
+    padding: 3px 10px;
+    margin-top: 30px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#submit:hover {
+    background-color: #ccc;
+    color: #333;
+    cursor: pointer;
+}
+
+.book-info {
+    display:flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding: 20px 10px;
+    row-gap: 5px;;
+}
+
+#clear {
+    display: none;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+    background: rgb(222, 71, 71);
+    font-size: 1.2rem;
+    padding: 3px 10px;
+    margin-top: 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 100px;
+    height: 40px; 
+    border: none;
+    z-index: 3
+}
+
+#clear:hover {
+    background:rgb(237, 117, 117);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+#delete {
+    color: rgb(237, 117, 117);
+}
+
+#delete:hover {
+    cursor: pointer;
+}
+
+.fadeOut {
+    animation: fadeOut 0.5s forwards
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes fadeOut {
+
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-10%);
+    }
+    
+}
+
+@media screen and (max-width: 930px) and (min-width: 550px) {
+
+    #submitted-data {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .container .empty-library {
+      transform: transformY(-20%);
+    }
+    
+}
+
+@media screen and (max-width: 630px) {
+
+    #submitted-data {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .empty-library h1{
+        font-size: 1.5rem;
+    }
+
+    .empty-library::after {
+      content: "\f518";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      font-size: 3rem;
+      
+    }
+
+    #formDiv {
+      width: 80%;
+    }
+
+    #exitWindow {
+      top: -12px;
+    }
+
+}
