@@ -10,9 +10,3 @@
 * Delete and clear buttons
 * CSS animations for improved UX
 * Responsively designed for different screen sizes
-
-## Issues to return to:
-* Firefox version does not display the div.empty-library, so the screen is just empty when there are no books stored in the library
-* Firefox version has positioning issues with the the text content of button#addBook
-
-
