@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>bookWorm</title>
+    <link rel="icon" type="image/png" href="icons/icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css"></link>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1>bookWorm</h1>
+                <a href="https://github.com/seanrw93/Library-App" target="_blank">
+                    <p>seanrw93</p>
+                </a>
+            </div>
+            <button id="addBook">+</button>
+        </div>
+        <div class="empty-library">
+            <h1>Your library is currently empty, why not add a book?</h1>
+        </div>
+        <div id="submitted-data"></div>
+    </div>
+
+    <!--#formDiv has position of absolute-->
+    <div id="formDiv">
+        <div id="exitWindow">×</div>
+        <form id="form">
+            <div class="form-row">
+                <label for="book-name">
+                    Title*
+                    <input type="text" id="book-name" required maxlength="100" placeholder="i.e. Lord of the Rings">
+            </label>
+            </div>
+            <div class="form-row">
+                <label for="author">
+                    Author*
+                    <input type="text" id="author" required  maxlength="50" placeholder="i.e. J.R.R. Tolkien">
+                </label>
+            </div>
+            <div class="form-row">
+                <label for="pagesRead">
+                    How many pages read?*
+                    <input type="number" id="pagesRead" required min="0" placeholder="i.e. 1214">
+                </label>
+            </div>
+            <div class="form-row">
+                <label for="imgUrl">
+                    Book cover URL
+                    <input type="url" id="imgUrl" placeholder="i.e. https://m.media-amazon.com/images/I/71jLBXtWJWL._AC_UF1000,1000_QL80_.jpg">
+                </label>
+            </div>
+            <div class="form-row">
+                  <label for="checkbox">
+                    Finished?
+                    <input type="checkbox" id="checkbox">
+                  </label>
+            </div>
+            <input type="submit" value="Submit" id="submit">
+        </form>
+    </div>
+
+    <button id="clear">Clear</button>
+
+</body>
+</html>
