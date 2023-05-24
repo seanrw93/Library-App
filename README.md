@@ -1,7 +1,7 @@
 # Library App
-* A web libray where you can add books(title, author, pages, read or unread) to the form and it will display it as tiles.
+* A web library where you can add books information to the form and it will display the result as tiles.
 * Built with HTML5, CSS3, JavaScript
-* Check out the live version [here]()
+* Check out the live version [here](https://seanrw93.github.io/Library-App/)
 
 ## Features:
 * Pop up form that allows you to input information
